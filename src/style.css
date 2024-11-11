@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-light: #f9fafb;
+  --text-light: #1f2937;
+  --bg-dark: #0B1121;
+  --text-dark: #f3f4f6;
+}
+
+body {
+  @apply bg-gray-50 dark:bg-[#0B1121] text-gray-800 dark:text-gray-100;
+}
+
+/* Pour éviter le scroll quand le menu mobile est ouvert */
+body.menu-open {
+  @apply overflow-hidden;
+}
+
+/* Transitions fluides */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+html {
+  scroll-behavior: smooth;
+  @apply overflow-x-hidden;
+}
+
+body {
+  @apply bg-[#0B1121] text-white overflow-x-hidden;
+}
+
+/* Gestion du scroll */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Styles de base pour le dark mode */
+:root {
+  color-scheme: dark;
+}
+
+/* Transitions fluides */
+.page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#151F32];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#4ECCA3] rounded-full;
+}
+
+/* Utilitaires pour le responsive */
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+}
+
+.personalize {
+  background-image: url('./assets/code.png');
+  background-size: cover;
+  background-position: center;
+}
